@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Life Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<div>
+    <div class="container"> 
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap fa-2xl"></i>
+                <span>Student Life</span>
+            </div>
+         
+            <nav class="menu-items">
+                <div class="menu-item" onclick="showPage('dashboard-section')">
+                    <i class="fa-regular fa-chart-bar fa-fw"></i>
+                    <span>Dashboard</span>
+                </div>
+                <div class="menu-item" onclick="showPage('gpa-section')">
+                    <i class="fa-solid fa-calculator fa-fw"></i>
+                    <span>GPA Simulator</span>
+                </div>
+                <div class="menu-item" onclick="showPage('activity-section')">
+                    <i class="fa-solid fa-list-check fa-fw"></i>
+                    <span>Activity To-Do</span>
+                </div>
+                <div class="menu-item" onclick="showPage('exam-section')">
+                    <i class="fa-regular fa-calendar-days fa-fw"></i>
+                    <span>Exam Schedule</span>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="menu-item"><i class="fa-solid fa-gear"></i><span>Setting</span></div>
+                <div class="menu-item"><i class="fa-solid fa-sign-out-alt"></i><span>Logout</span></div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div id="dashboard-section" class="content-section">
+                <h1><i class="fa-solid fa-house"></i> Dashboard</h1>
+                <p>ภาพรวมการเตรียมตัวเข้ามหาวิทยาลัย</p>
+
+                <div class="dashboard-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 25px;">
+                    
+                    <div class="card" style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 8px solid #8b5cf6; display: flex; align-items: center; gap: 20px;">
+                        <div style="background: #f3f0ff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #8b5cf6;">
+                            <i class="fa-solid fa-graduation-cap fa-2xl"></i>
+                        </div>
+                        <div>
+                            <p style="color: #666; font-size: 0.9rem; margin: 0;">GPAX ล่าสุด</p>
+                            <h2 id="dash-gpa" style="margin: 0; font-size: 1.8rem;">0.00</h2>
+                        </div>
+                    </div>
+
+                    <div class="card" style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 8px solid #3b82f6; display: flex; align-items: center; gap: 20px;">
+                        <div style="background: #eff6ff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #3b82f6;">
+                            <i class="fa-solid fa-list-check fa-2xl"></i>
+                        </div>
+                        <div>
+                            <p style="color: #666; font-size: 0.9rem; margin: 0;">กิจกรรมที่ต้องทำ</p>
+                            <h2 id="dash-todo-count" style="margin: 0; font-size: 1.8rem;">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="card" style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 8px solid #f59e0b; display: flex; align-items: center; gap: 20px;">
+                        <div style="background: #fffbeb; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #f59e0b;">
+                            <i class="fa-solid fa-hourglass-half fa-2xl"></i>
+                        </div>
+                        <div>
+                            <p style="color: #666; font-size: 0.9rem; margin: 0;">ประกาศผลสัมภาษณ์</p>
+                            <h2 id="dash-exam-days" style="margin: 0; font-size: 1.2rem;">-- วัน</h2>
+                        </div>
+                    </div>
+                </div> <div class="inspiration-box" style="margin-top: 30px; padding: 30px; background: #1a1a1a; color: white; border-radius: 20px; position: relative; overflow: hidden;">
+                    <h2 style="margin: 0; position: relative; z-index: 2;">"Keep going! don't give up!!"</h2>
+                    <p style="opacity: 0.7; margin-top: 10px; position: relative; z-index: 2;">- สู้ๆ รู้ว่าท้อแต่สู้ต่ออีกนิดนะ</p>
+                    <i class="fa-solid fa-rocket" style="position: absolute; right: 20px; bottom: -10px; font-size: 8rem; opacity: 0.1; transform: rotate(-20deg);"></i>
+                </div>
+            </div>
+
+            <div id="gpa-section" class="content-section" style="display: none;">
+                <h1><i class="fa-solid fa-calculator"></i> GPA Simulator</h1>
+                <div class="gpa-container">
+                    <table id="gpa-table">
+                        <thead>
+                            <tr>
+                                <th>ชื่อวิชา</th>
+                                <th>หน่วยกิต</th>
+                                <th>เกรด</th>
+                                <th>ลบ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="course-list">
+                            <tr>
+                                <td><input type="text" placeholder="ชื่อวิชา (เช่น Math)"></td>
+                                <td><input type="number" class="credit" placeholder="หน่วยกิต"></td>
+                                <td><input type="number" class="grade" placeholder="เกรด" step="0.01"></td>
+                                <td>
+                                    <button onclick="deleteRow(this)" class="btn-icon-delete">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="gpa-actions" style="margin-top: 20px;">
+                        <button onclick="addCourse()" class="btn-add">เพิ่มรายวิชา</button>
+                        <button onclick="calculateGPA()" class="btn-calculate">คำนวณเกรด</button>
+                        <div id="gpa-result" style="margin-top: 15px;">
+                            GPA ของคุณคือ: <span style="font-weight: bold; color: #8b5cf6;">0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="activity-section" class="content-section" style="display: none;">
+                <h1><i class="fa-solid fa-list-check"></i> Activity To-Do</h1>
+                <div class="todo-input-group" style="margin-top: 20px; display: flex; gap: 10px;">
+                    <input type="text" id="todo-input" placeholder="เช่น อ่านหนังสือเตรียมสอบ..." style="flex: 1; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
+                    <button onclick="addTodo()" class="btn-add-todo" style="padding: 10px 20px; background: #8b5cf6; color: white; border: none; border-radius: 8px; cursor: pointer;">เพิ่ม</button>
+                </div>
+                <ul id="todo-list" style="list-style: none; padding: 0; margin-top: 20px;"></ul>
+            </div>
+
+            <div id="exam-section" class="content-section" style="display: none;">
+                 <h1><i class="fa-regular fa-calendar-days"></i> Exam Schedule</h1>
+                 <p>ตารางสอบและนับถอยหลังสู่วันสำคัญ</p>
+
+            <div class="countdown-container" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; margin-top: 20px; text-align: center;">
+                <h3>นับถอยหลังTCAS2-2 Quota Rmutt. (3 เม.ษ 2026)</h3>
+                <div id="timer" style="font-size: 2.5rem; font-weight: bold; margin: 10px 0;">-- วัน -- ชม. -- นาที</div>
+            </div>
+
+            <div class="exam-table-container" style="margin-top: 30px; background: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="border-bottom: 2px solid #eee;">
+                    <th style="padding: 10px; text-align: left;">วิชา</th>
+                    <th style="padding: 10px; text-align: left;">วันที่สอบ</th>
+                    <th style="padding: 10px; text-align: left;">เวลา</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 15px;">TGAT / TPAT3</td>
+                    <td>ยังไม่กำหนด</td>
+                    <td>ตามประกาศ</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 15px;">A-Level</td>
+                    <td>ยังไม่กำหนด</td>
+                    <td>ตามประกาศ</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; color: #8b5cf6; font-weight: bold;">TCAS2-2 Quota Rmutt</td>
+                    <td style="color: #8b5cf6; font-weight: bold;">4 เม.ษ 2026</td>
+                    <td style="color: #8b5cf6; font-weight: bold;">9:00 น.</td>
+                </tr>
+                    </tbody>
+                            </table>
+                                    </div>
+                </div>
+        </main>
+    </div>
+
+
+    <script src="app.js"></script>
+    <script>
+        function showPage(pageId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(s => s.style.display = 'none');
+            document.getElementById(pageId).style.display = 'block';
+        }
+    </script>
+</body>

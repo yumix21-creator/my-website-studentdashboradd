@@ -1,0 +1,233 @@
+.sidebar {
+    width: 260px;
+    height: calc(100vh - 20px);
+    margin: 10px;
+    gap: 20px;
+    align-self: center;
+    position: sticky;
+    top: 0%;
+    
+    background: linear-gradient(180deg, #9d62f0 0%, #8b5cf6 100%);
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    color: white;   
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.menu-item {
+    padding: 15px;
+    margin: 5px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3;
+    opacity: 0.8;
+    display: flex;
+    text-align: center;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 1;
+    font-weight: bold;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 1;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 100vh;
+}
+
+body {
+    font-family: "Prompt", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+    padding-left: 50px;
+
+}
+
+.sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 25px;
+    background-color: #f0f0f0;
+}
+
+#gpa-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#gpa-table th, #gpa-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+#gpa-table th {
+    background-color: #8b5cf6;
+    color: white;
+}
+
+#gpa-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+input, select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.bth-calculate {
+    padding: 10px 20px;
+    background-color: #8b5cf6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#gpa-result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#gpa-table button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #ff4d4d;
+    font-size: 1.2rem;
+}
+
+#gpa-table button:hover {
+    color: #ff1a1a;
+}
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#todo-list li {
+    background: #ffffff;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #a0a0a0;
+}
+
+.btn-icon-delete {
+    background: none;
+    border: none;
+    color: #ff4d4d; /* สีแดง */
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.1rem;
+}
+
+.btn-icon-delete:hover {
+    color: #ff0000;
+    transform: scale(1.1);
+}
+
+/* เพิ่มความนูนให้การ์ดใน Dashboard */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* ย้ำเรื่องปุ่มลบแดง (btn-icon-delete) */
+.btn-icon-delete {
+    background: none !important;
+    border: none !important;
+    color: #ff4d4d !important;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 0;
+    transition: 0.2s;
+}
+
+.btn-icon-delete:hover {
+    color: #ff0000 !important;
+    transform: scale(1.2);
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* ย้ำเรื่องปุ่มลบแดง (btn-icon-delete) */
+.btn-icon-delete {
+    background: none !important;
+    border: none !important;
+    color: #ff4d4d !important;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 0;
+    transition: 0.2s;
+}
+
+.btn-icon-delete:hover {
+    color: #ff0000 !important;
+    transform: scale(1.2);
+}
