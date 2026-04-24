@@ -106,7 +106,7 @@ function showPage(pageId) {
 }
 
 function startCountdown() {
-    const examDate = new Date("April 25, 69 09:00:00").getTime();
+    const examDate = new Date("April 25, 2025 09:00:00").getTime();
     setInterval(function() {
         const now = new Date().getTime();
         const distance = examDate - now;
