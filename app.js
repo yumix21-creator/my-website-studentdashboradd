@@ -2,9 +2,9 @@ function addCourse() {
     const tbody = document.getElementById('course-list');
     const newRow = document.createElement('tr');
     newRow.innerHTML = `
-        <td><input type="text" placeholder="ชื่อวิชา (เช่น Math)"></td>
+        <td><input type="text" placeholder="ชื่อวิชา (เช่น คณิตศาสตร์)"></td>
         <td><input type="number" class="credit" placeholder="หน่วยกิต"></td>
-        <td><input type="number" class="grade" placeholder="เกรด" step="0.01"></td>
+        <td><input type="number" class="grade" placeholder="เกรด" step="0.1"></td>
         <td>
             <button onclick="deleteRow(this)" class="btn-icon-delete">
                 <i class="fa-solid fa-trash"></i>
@@ -72,7 +72,7 @@ function toggleDone(span) {
         span.style.textDecoration = 'line-through';
         span.style.color = '#888';
     }
-    updateDashboard(); // อัปเดตเลขทันทีเมื่อขีดฆ่า
+    updateDashboard();
 }
 
 function updateDashboard() {
@@ -106,7 +106,7 @@ function showPage(pageId) {
 }
 
 function startCountdown() {
-    const examDate = new Date("April 4, 2026 09:00:00").getTime();
+    const examDate = new Date("April 25, 69 09:00:00").getTime();
     setInterval(function() {
         const now = new Date().getTime();
         const distance = examDate - now;
